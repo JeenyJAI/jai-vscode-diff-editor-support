@@ -1,0 +1,37 @@
+JAI: Diff Editor (lite-diff) — End-User License Agreement (EULA)
+Version: 2025-12-14
+© 2025 JeenyJAI. All rights reserved.
+
+1) Definitions
+"Software" means the JAI: Diff Editor (lite-diff) extension for Visual Studio Code, including updates and documentation.
+
+2) License
+Subject to this Agreement, JeenyJAI ("Licensor") grants you a non-exclusive, non-transferable license to install and use the Software for personal or commercial purposes.
+This is a license, not a sale. All rights not expressly granted are reserved. You must keep all copyright and license notices.
+
+3) Restrictions
+Except as permitted by applicable law, you may not: modify, translate, adapt, create derivative works, decompile, disassemble, or reverse engineer the Software; remove/alter notices; circumvent technical limits; or sublicense, rent, lease, sell, or transfer the Software or rights in it.
+
+4) Distribution (Unmodified Only)
+You may redistribute only exact, unmodified copies of the Software (including the original .vsix) provided that this Agreement is included and all notices and branding remain intact. Any modified builds, forks, rebranding, or repackaging are prohibited without Licensor's prior written consent.
+
+5) Third-Party Components
+As of this version, the Software does not include third-party components. If added in the future, they will be listed in THIRD-PARTY-LICENSES.md, and their respective licenses will govern those components.
+
+6) Updates
+Updates may be provided at Licensor's discretion and are governed by this Agreement unless stated otherwise.
+
+7) Termination
+This Agreement terminates automatically if you breach it. Upon termination, you must stop using the Software and delete all copies in your possession or control.
+Sections 3, 7, 8, and 9 survive termination.
+
+8) Disclaimer
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+9) Limitation of Liability
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, LICENSOR WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES, OR FOR LOSS OF PROFITS, DATA, GOODWILL, OR BUSINESS INTERRUPTION, ARISING FROM OR RELATED TO THE SOFTWARE.
+
+10) Marketplace Terms
+Use of the Software obtained via the Visual Studio Marketplace is also subject to the applicable Marketplace Terms of Use.
+
+Support & Contact: https://github.com/JeenyJAI/jai-vscode-diff-editor-support/issues
