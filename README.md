@@ -3,8 +3,10 @@
 ## 100% AI Code · Human Reviewed
 
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/JeenyJAI.diff-editor)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/JeenyJAI.diff-editor)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
+[![VS Code](https://img.shields.io/visual-studio-marketplace/d/JeenyJAI.diff-editor?label=VSCode)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
+[![Open VSX](https://img.shields.io/open-vsx/dt/JeenyJAI/diff-editor?label=OpenVSX)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
 [![spec: lite-diff v1.0](https://img.shields.io/badge/spec-lite--diff%20v1.0-green)](https://github.com/lite-diff/spec)
-[![license](https://img.shields.io/badge/license-EULA-blue)](#license)
 [![AI generated](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/jai-vscode-diff-editor-support)
 
 ### Working with AI assistants like Claude or ChatGPT? Tired of manually applying code patches?
@@ -26,6 +28,7 @@ Based on the [lite-diff specification](https://github.com/lite-diff/spec).
 - **Preview mode** — See exact changes in VS Code diff viewer before applying
 - **Multi-file support** — Process multiple files in a single patch
 - **Automatic backups** — Every change creates a backup in `.ldiff/` directory
+- **MCP Server** — Integrate with [Cursor IDE](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/cursor.md) and [Claude Desktop](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/claude-desktop.md) for AI-assisted patching
 
 ## Quick Start
 
