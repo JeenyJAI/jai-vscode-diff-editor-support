@@ -2,11 +2,10 @@
 
 ## 100% AI Code · Human Reviewed
 
-[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/JeenyJAI.diff-editor)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/JeenyJAI.diff-editor)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
+[![version](https://img.shields.io/open-vsx/v/JeenyJAI/diff-editor?label=version)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
 [![VS Code](https://img.shields.io/visual-studio-marketplace/d/JeenyJAI.diff-editor?label=VSCode)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
 [![Open VSX](https://img.shields.io/open-vsx/dt/JeenyJAI/diff-editor?label=OpenVSX)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
-[![spec: lite-diff v1.0](https://img.shields.io/badge/spec-lite--diff%20v1.0-green)](https://github.com/lite-diff/spec)
+[![spec: lite-diff v1.0](https://img.shields.io/badge/spec-lite--diff%20v1.0-419fff)](https://github.com/lite-diff/spec)
 [![AI generated](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/jai-vscode-diff-editor-support)
 
 ### Working with AI assistants like Claude or ChatGPT? Tired of manually applying code patches?
@@ -37,7 +36,9 @@ Based on the [lite-diff specification](https://github.com/lite-diff/spec).
 3. Paste your lite-diff patch
 4. Review changes in diff viewer, then apply
 
-![Demo](https://raw.githubusercontent.com/JeenyJAI/jai-vscode-diff-editor-support/main/media/demo.gif)
+[![Demo](https://raw.githubusercontent.com/JeenyJAI/jai-vscode-diff-editor-support/main/media/demo.gif)](https://www.youtube.com/watch?v=8zqH6gGesec)
+
+[*Click to watch full video on YouTube*](https://www.youtube.com/watch?v=8zqH6gGesec)
 
 ## Syntax Guide
 
@@ -141,9 +142,15 @@ Add at the beginning of your patch, before any `diff` block:
 | `diffEditor.verboseLogging` | `false` | Enable verbose logging for debugging |
 | `diffEditor.backupLimit` | `5` | Max backup packages to keep (0 = only active) |
 
+## Telemetry
+
+This extension collects minimal anonymous telemetry (feature usage counts, no personal data) to help prioritize development. Telemetry respects the VS Code `telemetry.telemetryLevel` setting — set it to `"off"` to disable. See [PRIVACY.md](./PRIVACY.md) for full details.
+
 ## Contributing
 
 Found a bug or have a feature request? Please open an issue on [GitHub](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/issues).
+
+For other inquiries: JeenyJAI@gmail.com
 
 ## License
 
