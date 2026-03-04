@@ -3,7 +3,7 @@
 ## 100% AI Code · Human Reviewed
 
 [![version](https://img.shields.io/open-vsx/v/JeenyJAI/diff-editor?label=version)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
-[![VS Code](https://img.shields.io/visual-studio-marketplace/d/JeenyJAI.diff-editor?label=VSCode)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
+[![VS Code](https://img.shields.io/visual-studio-marketplace/i/JeenyJAI.diff-editor?label=VS%20Code)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
 [![Open VSX](https://img.shields.io/open-vsx/dt/JeenyJAI/diff-editor?label=OpenVSX)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
 [![spec: lite-diff v1.0](https://img.shields.io/badge/spec-lite--diff%20v1.0-419fff)](https://github.com/lite-diff/spec)
 [![AI generated](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/jai-vscode-diff-editor-support)
@@ -27,7 +27,7 @@ Based on the [lite-diff specification](https://github.com/lite-diff/spec).
 - **Preview mode** — See exact changes in VS Code diff viewer before applying
 - **Multi-file support** — Process multiple files in a single patch
 - **Automatic backups** — Every change creates a backup in `.ldiff/` directory
-- **MCP Server** — Integrate with [Cursor IDE](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/cursor.md) and [Claude Desktop](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/claude-desktop.md) for AI-assisted patching
+- **MCP Server** — Integrate with [Cursor IDE](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/cursor.md) and [Claude](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/claude.md) for AI-assisted patching
 
 ## Quick Start
 
@@ -160,4 +160,4 @@ The [lite-diff specification](https://github.com/lite-diff/spec) is licensed und
 
 ---
 
-🚀 **Created by [Claude Opus 4.5](https://claude.ai), [ChatGPT 5 Pro](https://chat.openai.com)**
+🚀 **Created with [Claude Opus 4.6](https://claude.ai) · Early contributions by [ChatGPT 5 Pro](https://chat.openai.com)**
