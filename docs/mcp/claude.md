@@ -10,7 +10,22 @@ Connect lite-diff to Claude for AI-assisted code patching.
 | **Claude Desktop — Code** | `claude_desktop_config.json` | stdio (via launcher) | Same config as Chat mode |
 | **Claude Code (VS Code ext)** | `.claude/settings.local.json` | stdio (direct) | Project-level config with `--workspace` arg |
 
-> **Note:** When you select "Claude" in lite-diff, the extension registers in **both** configs simultaneously. No need to choose between modes.
+> **Note:** When you select "Claude" in lite-diff, the extension registers in **both** configs simultaneously. No need to choose between modes. Claude Desktop requires [Node.js](https://nodejs.org/) (LTS) installed on the system.
+
+## Prerequisites
+
+| Requirement | Needed for | Not needed for |
+|-------------|------------|----------------|
+| [Node.js](https://nodejs.org/) (LTS) | Claude Desktop (Chat & Code) | Claude Code (VS Code extension), Cursor IDE |
+
+Claude Desktop launches `node mcp-stdio.cjs` as a separate process. If Node.js is not installed or not in PATH, the MCP server will silently fail to start.
+
+**Install Node.js:**
+- **Windows:** `winget install OpenJS.NodeJS.LTS`
+- **macOS:** `brew install node@24` or download from [nodejs.org](https://nodejs.org/)
+- **Linux:** `sudo apt install nodejs` or use [nvm](https://github.com/nvm-sh/nvm)
+
+After installation, verify: `node --version`
 
 ---
 
@@ -62,7 +77,7 @@ Ask Claude:
 What litediff tools are available?
 ```
 
-Claude should list 19 tools including `litediff_preview`, `litediff_apply`, `litediff_validate`.
+Claude should list 23 tools including `litediff_preview`, `litediff_apply`, `litediff_help`.
 
 ---
 
@@ -75,8 +90,10 @@ Claude should list 19 tools including `litediff_preview`, `litediff_apply`, `lit
 | OS | Path |
 |----|------|
 | macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
-| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json` (standard) or `%LOCALAPPDATA%\Packages\Claude_*\LocalCache\Roaming\Claude\claude_desktop_config.json` (MSIX) |
 | Linux | `~/.config/Claude/claude_desktop_config.json` |
+
+> **Note:** On Windows, Claude Desktop installed as MSIX package (default download from claude.ai) stores config in a different location. The extension detects this automatically.
 
 **Project config** (`.claude/settings.local.json`):
 
@@ -90,7 +107,8 @@ The extension manages both files automatically. Manual editing is not required.
 
 | Problem | Cause | Solution |
 |---------|-------|----------|
-| "MCP server litediff not found" | Node.js not installed | Install [Node.js](https://nodejs.org/) |
+| "MCP server litediff not found" | Node.js not installed | Install Node.js: `winget install OpenJS.NodeJS.LTS` (Windows) |
+| "No matching tools found" | Node.js not in PATH | Close and reopen terminal/Claude Desktop after Node.js install |
 | Tools don't work | VS Code not running | Open VS Code with the same workspace |
 | Tools unavailable after restart | Config not updated | Restart MCP Server, then restart Claude Desktop |
 | Claude Code doesn't see tools | No workspace open | Open a folder in VS Code before starting MCP Server |
@@ -107,9 +125,6 @@ After connecting, use these prompts in Claude:
 |--------|--------------|
 | "Preview this patch: ..." | Creates preview without applying |
 | "Apply the preview" | Applies changes from current preview |
-| "Validate this patch: ..." | Checks patch syntax only |
-
-> **Note:** `preview` already includes validation. Use `validate` separately when you only need to check syntax without creating a preview.
 
 **UI & status:**
 
@@ -161,6 +176,7 @@ This removes the litediff entry from both config files. Restart Claude Desktop t
 
 | Limitation | Description |
 |------------|-------------|
+| Node.js required | Claude Desktop needs Node.js (LTS) in system PATH |
 | One workspace | Server is bound to the current VS Code workspace |
 | Desktop requires restart | Config changes require Claude Desktop restart |
 | UI requires VS Code | `showPanel`, `openDiff` only work if VS Code is open |

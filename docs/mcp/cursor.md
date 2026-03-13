@@ -31,7 +31,7 @@ Status Bar will show: `● MCP`
 2. Go to **Tools & MCP**
 3. Enable **litediff** toggle
 
-You should see: `litediff — 19 tools enabled`
+You should see: `litediff — 23 tools enabled`
 
 ![Cursor Tools & MCP](./images/cursor-tools-mcp.png)
 
@@ -44,7 +44,7 @@ Open Cursor Chat (`Ctrl+L`) and ask:
 What litediff tools are available?
 ```
 
-Cursor should list 19 tools including `litediff_preview`, `litediff_apply`, `litediff_validate`.
+Cursor should list 23 tools including `litediff_preview`, `litediff_apply`, `litediff_help`.
 
 ---
 
@@ -93,9 +93,6 @@ After connecting, use these prompts in Cursor Chat:
 |--------|--------------|
 | "Preview this patch: ..." | Creates preview without applying |
 | "Apply the preview" | Applies changes from current preview |
-| "Validate this patch: ..." | Checks patch syntax only |
-
-> **Note:** `preview` already includes validation. Use `validate` separately when you only need to check syntax without creating a preview.
 
 **UI & status:**
 
