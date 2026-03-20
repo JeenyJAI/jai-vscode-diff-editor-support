@@ -4,19 +4,21 @@
 
 [![version](https://img.shields.io/open-vsx/v/JeenyJAI/diff-editor?label=version)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
 [![VS Code](https://img.shields.io/visual-studio-marketplace/i/JeenyJAI.diff-editor?label=VS%20Code)](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)
-[![Open VSX](https://img.shields.io/open-vsx/dt/JeenyJAI/diff-editor?label=OpenVSX)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
+[![Open VSX](https://img.shields.io/open-vsx/dt/JeenyJAI/diff-editor?label=Open%20VSX)](https://open-vsx.org/extension/JeenyJAI/diff-editor)
 [![spec: lite-diff v1.0](https://img.shields.io/badge/spec-lite--diff%20v1.0-419fff)](https://github.com/lite-diff/spec)
 [![AI generated](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/jai-vscode-diff-editor-support)
 
-### Working with AI assistants like Claude or ChatGPT? Tired of manually applying code patches?
-
-This extension brings unified diff format to your IDE workflow. Apply AI-generated patches with preview, automatic backups, and drift detection.
-Based on the [lite-diff specification](https://github.com/lite-diff/spec).
-
-- **Before:** Copy patches from AI chat → Manually find and edit each location → Hope nothing breaks
-- **After:** Paste lite-diff patch → Preview changes in VS Code diff viewer → Apply with one click
-
 **[Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=JeenyJAI.diff-editor)**
+
+### Working with AI assistants like Claude, Cursor, or ChatGPT? Tired of manually applying code patches?
+
+This extension bridges unified diff format and your IDE. Apply AI-generated patches with preview, selective hunk application, automatic backups, and drift detection.
+
+**Two ways to work:**
+- **Manual** — Paste a lite-diff patch into the editor panel, preview in VS Code diff viewer, apply with one click
+- **AI-assisted (MCP)** — Your AI agent reads code, generates patches, previews, and applies — all through MCP tools, no copy-paste needed
+
+Based on the [lite-diff specification](https://github.com/lite-diff/spec).
 
 ## Features
 
@@ -27,7 +29,47 @@ Based on the [lite-diff specification](https://github.com/lite-diff/spec).
 - **Preview mode** — See exact changes in VS Code diff viewer before applying
 - **Multi-file support** — Process multiple files in a single patch
 - **Automatic backups** — Every change creates a backup in `.ldiff/` directory
-- **MCP Server** — Integrate with [Cursor IDE](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/cursor.md) and [Claude](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/claude.md) for AI-assisted patching
+- **MCP Server** — Integrate with [Claude](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/claude.md) and [Cursor IDE](https://github.com/JeenyJAI/jai-vscode-diff-editor-support/blob/main/docs/mcp/cursor.md) for AI-assisted patching
+
+## Tutorial Videos
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://www.youtube.com/watch?v=8zqH6gGesec">
+        <img src="https://raw.githubusercontent.com/JeenyJAI/jai-vscode-diff-editor-support/main/media/demo.gif" alt="Overview demo" width="100%">
+      </a>
+      <br><b>Overview Demo</b>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://youtu.be/eVA6jTJbRqs">
+        <img src="https://img.youtube.com/vi/eVA6jTJbRqs/mqdefault.jpg" alt="Claude Desktop Chat" width="100%">
+      </a>
+      <br><b>Claude Desktop — Chat</b>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://youtu.be/XAV0g0eIny8">
+        <img src="https://img.youtube.com/vi/XAV0g0eIny8/mqdefault.jpg" alt="Claude Desktop Code" width="100%">
+      </a>
+      <br><b>Claude Desktop — Code</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://youtu.be/De2HHm1QO9U">
+        <img src="https://img.youtube.com/vi/De2HHm1QO9U/mqdefault.jpg" alt="Claude Code" width="100%">
+      </a>
+      <br><b>Claude Code (VS Code)</b>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://youtu.be/JAOP2e0elHY">
+        <img src="https://img.youtube.com/vi/JAOP2e0elHY/mqdefault.jpg" alt="Cursor IDE" width="100%">
+      </a>
+      <br><b>Cursor IDE</b>
+    </td>
+    <td width="33%"></td>
+  </tr>
+</table>
 
 ## Quick Start
 
@@ -35,10 +77,6 @@ Based on the [lite-diff specification](https://github.com/lite-diff/spec).
 2. Run `JAI: Diff Editor (lite-diff)`
 3. Paste your lite-diff patch
 4. Review changes in diff viewer, then apply
-
-[![Demo](https://raw.githubusercontent.com/JeenyJAI/jai-vscode-diff-editor-support/main/media/demo.gif)](https://www.youtube.com/watch?v=8zqH6gGesec)
-
-[*Click to watch full video on YouTube*](https://www.youtube.com/watch?v=8zqH6gGesec)
 
 ## Syntax Guide
 
@@ -123,17 +161,6 @@ Add at the beginning of your patch, before any `diff` block:
 - No blank lines allowed inside hunk body (from `@@` to the next `@@` or end of diff block)
 - Comments start with `#` at the first position on a separate line
 - Preview creates directories `.ldiff/<TIMESTAMP>/original/` and `.ldiff/<TIMESTAMP>/preview/`
-
-## Common Errors
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| **E410** "No match found" | Context doesn't match file | Verify exact line match or use `--ignore-*` options |
-| **E401** "Invalid prefix" | Line doesn't start with ` `, `-`, `+`, `#`, or `...` | Fix prefix or remove leading whitespace |
-| **E402** "Blank line inside hunk" | Empty line in hunk body | Remove or use ` ` prefix for empty context |
-| **E411** "Invalid content after BOF/EOF" | Non-`+` line after `@@ BOF/EOF` | Use only `+` lines after BOF/EOF |
-| **E304** "Multiple hunks with --apply-all-matches" | `--apply-all-matches` with >1 hunk | Split into separate diff blocks |
-| **E724** "Drift detected" | File changed after preview | Re-run preview before applying |
 
 ## Configuration
 
